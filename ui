@@ -1838,8 +1838,8 @@ function library:Init(key)
 					end
 				end)
 				
-				keybind.UIS = game:GetService("UserInputService")
-				keybind.UIS.InputBegan:Connect(function(input, gpe)
+				local t = game:GetService("UserInputService")
+				t.InputBegan:Connect(function(input, gpe)
 					if (input.KeyCode == ChosenKey or input.UserInputType == ChosenKey) then
 						callback_t(ChosenKey)
 					end
@@ -2061,8 +2061,8 @@ function library:Init(key)
 					ChosenKey = InputWait.KeyCode.Name
 				end
 			end)
-			keybind.UIS = game:GetService("UserInputService")
-			keybind.UIS.InputBegan:Connect(function(input, gpe)
+			t = game:GetService("UserInputService")
+			t.InputBegan:Connect(function(input, gpe)
 				if (input.KeyCode == ChosenKey or input.UserInputType == ChosenKey) then
 					callback(ChosenKey)
 				end
